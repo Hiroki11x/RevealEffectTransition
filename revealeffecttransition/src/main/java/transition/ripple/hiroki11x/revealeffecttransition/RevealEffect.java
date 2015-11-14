@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
@@ -23,7 +22,7 @@ import android.view.animation.Interpolator;
  * Created by hirokinaganuma on 15/11/14.
  */
 
-public class RevealEffectActivity extends AppCompatActivity {
+public class RevealEffect {
 
 
     private static Interpolator interpolator;
@@ -38,7 +37,6 @@ public class RevealEffectActivity extends AppCompatActivity {
 
     private static int reveal_center_x;
     private static int reveal_center_y;
-
 
 
     public static void bindAnimation(ViewGroup viewGroup, Intent argIntent, Context context, Window window, Resources resources) {
@@ -177,7 +175,7 @@ public class RevealEffectActivity extends AppCompatActivity {
         }
     }
 
-    public static Animator animateRevealColorFromCoordinates(int x, int y) {
+    private static Animator animateRevealColorFromCoordinates(int x, int y) {
         ViewGroup viewRoot = (ViewGroup) mWindow.getDecorView().findViewById(android.R.id.content);
         float finalRadius = (float) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
         Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, 0, finalRadius);
@@ -186,4 +184,37 @@ public class RevealEffectActivity extends AppCompatActivity {
         anim.start();
         return anim;
     }
+
+    private static Animator animateRevealColorFromCoordinatesFade(int x, int y) {
+        ViewGroup viewRoot = (ViewGroup) mWindow.getDecorView().findViewById(android.R.id.content);
+        float finalRadius = (float) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
+//        Animator anim = ValueAnimator.ofFloat(0.f, 100.f);
+
+        Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, 500, 0);
+//        anim.addListener(new Animator.AnimatorListener() {
+//            @Override
+//            public void onAnimationStart(Animator animation) {
+//            }
+//            @Override
+//            public void onAnimationEnd(Animator animation) {
+//            }
+//            @Override
+//            public void onAnimationCancel(Animator animation) {
+//            }
+//            @Override
+//            public void onAnimationRepeat(Animator animation) {
+//            }
+//        });
+        anim.setDuration(duration);
+        anim.setInterpolator(new AccelerateDecelerateInterpolator());
+        anim.start();
+
+        return anim;
+    }
+
+    public static void unbindAnimation() {
+        animateRevealColorFromCoordinatesFade(reveal_center_x, reveal_center_y);
+    }
+
+
 }

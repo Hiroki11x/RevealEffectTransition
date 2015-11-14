@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ViewGroup;
 
-import transition.ripple.hiroki11x.revealeffecttransition.RevealEffectActivity;
+import transition.ripple.hiroki11x.revealeffecttransition.RevealEffect;
 
 public class SampleRevealEffectActivity extends AppCompatActivity {
 
@@ -13,7 +13,7 @@ public class SampleRevealEffectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_reveal_effect);
 
-        RevealEffectActivity.bindAnimation(
+        RevealEffect.bindAnimation(
                 (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content),
                 getIntent(),
                 SampleRevealEffectActivity.this,
@@ -21,4 +21,11 @@ public class SampleRevealEffectActivity extends AppCompatActivity {
                 getResources()
         );
     }
+
+    @Override
+    public void onStop(){
+        RevealEffect.unbindAnimation();
+        super.onStop();
+    }
+
 }
