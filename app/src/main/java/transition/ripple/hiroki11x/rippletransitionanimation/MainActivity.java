@@ -18,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 RevealTriggerIntent intent = new RevealTriggerIntent(MainActivity.this, SampleRevealEffectActivity.class);
-                intent.setRevealIntentPivot(v);
+                intent.setRevealIntentPivot(view);
                 startActivity(intent);
             }
         });

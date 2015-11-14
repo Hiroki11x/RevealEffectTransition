@@ -10,11 +10,11 @@ import android.view.View;
 public class RevealTriggerIntent extends Intent {
 
     public RevealTriggerIntent(Context packageContext, Class<?> cls) {
-        super(packageContext,cls);
+        super(packageContext, cls);
 
     }
 
-    public void setRevealIntentPivot(View v){
+    public void setRevealIntentPivot(View v) {
         this.putExtra("x", v.getX() + v.getWidth() / 2);
         this.putExtra("y", v.getY() + v.getHeight() / 2);
     }
