@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Transition;
@@ -28,8 +27,8 @@ public class RevealEffectActivity extends AppCompatActivity {
 
 
     private static Interpolator interpolator;
-    private static final int DELAY = 100;
-    private static final int DURATION = 500;
+    private static int delay = 100;
+    private static int duration = 500;
 
     private static Intent mIntent;
     private static Context mContext;
@@ -39,6 +38,8 @@ public class RevealEffectActivity extends AppCompatActivity {
 
     private static int reveal_center_x;
     private static int reveal_center_y;
+
+
 
     public static void bindAnimation(ViewGroup viewGroup, Intent argIntent, Context context, Window window, Resources resources) {
 
@@ -55,23 +56,6 @@ public class RevealEffectActivity extends AppCompatActivity {
                 removeOnGlobalLayoutListener(parentLayout.getViewTreeObserver(), this);
                 reveal_center_x = (int) mIntent.getFloatExtra("x", 0.0f);
                 reveal_center_y = (int) mIntent.getFloatExtra("y", 0.0f);
-                animateRevealColorFromCoordinates(reveal_center_x, reveal_center_y);
-            }
-        });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        parentLayout = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
-        ;
-        setupWindowAnimations();
-        parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                removeOnGlobalLayoutListener(parentLayout.getViewTreeObserver(), this);
-                reveal_center_x = (int) getIntent().getFloatExtra("x", 0.0f);
-                reveal_center_y = (int) getIntent().getFloatExtra("y", 0.0f);
                 animateRevealColorFromCoordinates(reveal_center_x, reveal_center_y);
             }
         });
@@ -173,7 +157,7 @@ public class RevealEffectActivity extends AppCompatActivity {
         for (int i = 0; i < parentLayout.getChildCount(); i++) {
             View child = parentLayout.getChildAt(i);
             child.animate()
-                    .setStartDelay(100 + i * DELAY)
+                    .setStartDelay(100 + i * delay)
                     .setInterpolator(interpolator)
                     .alpha(1)
                     .scaleX(1)
@@ -194,7 +178,6 @@ public class RevealEffectActivity extends AppCompatActivity {
     }
 
     public static Animator animateRevealColorFromCoordinates(int x, int y) {
-        int duration = DURATION;
         ViewGroup viewRoot = (ViewGroup) mWindow.getDecorView().findViewById(android.R.id.content);
         float finalRadius = (float) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
         Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, 0, finalRadius);

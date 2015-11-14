@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">RippleTransitionAnimation</string>
+    <string name="app_name">RevealEffectTransition</string>
     <string name="transition_reveal">transition_reveal</string>
 </resources>
