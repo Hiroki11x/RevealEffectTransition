@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RippleTransitionAnimation.iml" filepath="$PROJECT_DIR$/RippleTransitionAnimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/revealeffecttransition/revealeffecttransition.iml" filepath="$PROJECT_DIR$/revealeffecttransition/revealeffecttransition.iml" />
     </modules>
   </component>
 </project>
