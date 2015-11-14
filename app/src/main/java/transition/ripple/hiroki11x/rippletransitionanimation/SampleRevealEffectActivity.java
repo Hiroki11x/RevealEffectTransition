@@ -2,11 +2,15 @@ package transition.ripple.hiroki11x.rippletransitionanimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import transition.ripple.hiroki11x.revealeffecttransition.RevealEffect;
 
 public class SampleRevealEffectActivity extends AppCompatActivity {
+
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +26,12 @@ public class SampleRevealEffectActivity extends AppCompatActivity {
         );
     }
 
-    @Override
-    public void onStop(){
-        RevealEffect.unbindAnimation();
-        super.onStop();
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            RevealEffect.unbindAnimation(this);
+            return false;
+        }else{
+            return false;
+        }
     }
-
 }

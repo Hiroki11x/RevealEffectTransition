@@ -2,6 +2,7 @@ package transition.ripple.hiroki11x.revealeffecttransition;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -25,6 +26,8 @@ import android.view.animation.Interpolator;
 public class RevealEffect {
 
 
+    public static boolean flag;
+
     private static Interpolator interpolator;
     private static int delay = 100;
     private static int duration = 500;
@@ -40,6 +43,8 @@ public class RevealEffect {
 
 
     public static void bindAnimation(ViewGroup viewGroup, Intent argIntent, Context context, Window window, Resources resources) {
+
+        flag = false;
 
         mResources = resources;
         mWindow = window;
@@ -185,36 +190,36 @@ public class RevealEffect {
         return anim;
     }
 
-    private static Animator animateRevealColorFromCoordinatesFade(int x, int y) {
+    private static void animateRevealColorFromCoordinatesFade(int x, int y, final Activity mActivity) {
         ViewGroup viewRoot = (ViewGroup) mWindow.getDecorView().findViewById(android.R.id.content);
         float finalRadius = (float) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
-//        Animator anim = ValueAnimator.ofFloat(0.f, 100.f);
-
-        Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, 500, 0);
-//        anim.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//            }
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//            }
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//            }
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//            }
-//        });
+        Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, finalRadius * 2, 0);
         anim.setDuration(duration);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
+        anim.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                parentLayout.setVisibility(View.INVISIBLE);
+                flag = true;
+                mActivity.finish();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
         anim.start();
-
-        return anim;
     }
 
-    public static void unbindAnimation() {
-        animateRevealColorFromCoordinatesFade(reveal_center_x, reveal_center_y);
+    public static void unbindAnimation(Activity mActivity) {
+        animateRevealColorFromCoordinatesFade(reveal_center_x, reveal_center_y, mActivity);
     }
-
-
 }

@@ -58,25 +58,45 @@
       <file leaf-file-name="RevealEffect.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealEffect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7037036">
-              <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+            <state vertical-scroll-proportion="-7.9259257">
+              <caret line="205" column="57" selection-start-line="205" selection-start-column="57" selection-end-line="205" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3783#3836#0" expanded="true" />
-                <element signature="e#3878#3931#0" expanded="true" />
-                <element signature="e#5052#5295#0" expanded="true" />
-                <element signature="e#5294#5295#0" expanded="true" />
-                <element signature="e#5323#5376#0" expanded="true" />
+                <element signature="e#3868#3921#0" expanded="true" />
+                <element signature="e#3963#4016#0" expanded="true" />
+                <element signature="e#5137#5380#0" expanded="true" />
+                <element signature="e#5379#5380#0" expanded="true" />
+                <element signature="e#5408#5461#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SampleRevealEffectActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SampleRevealEffectActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/SampleRevealEffectActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60876626">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.25466892">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -86,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
+              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="25" selection-end-column="11" />
               <folding>
                 <element signature="e#601#933#0" expanded="true" />
                 <element signature="e#932#933#0" expanded="true" />
@@ -2305,15 +2325,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/revealeffecttransition/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/MainActivity.java" />
         <option value="$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealTriggerIntent.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealEffectActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/SampleRevealEffectActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sample_reveal_effect.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/SampleRevealEffectActivity.java" />
         <option value="$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealEffect.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -3175,11 +3195,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3783#3836#0" expanded="true" />
-            <element signature="e#3878#3931#0" expanded="true" />
-            <element signature="e#5052#5295#0" expanded="true" />
-            <element signature="e#5294#5295#0" expanded="true" />
-            <element signature="e#5323#5376#0" expanded="true" />
+            <element signature="e#3868#3921#0" expanded="true" />
+            <element signature="e#3963#4016#0" expanded="true" />
+            <element signature="e#5137#5380#0" expanded="true" />
+            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#5408#5461#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3325,22 +3345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16975309">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15873016">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/revealeffecttransition/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.108024694">
@@ -3390,17 +3394,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-          <folding>
-            <element signature="e#601#933#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.275862">
@@ -3412,17 +3405,13 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealEffect.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7037036">
-          <caret line="116" column="16" selection-start-line="116" selection-start-column="16" selection-end-line="116" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="25" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3783#3836#0" expanded="true" />
-            <element signature="e#3878#3931#0" expanded="true" />
-            <element signature="e#5052#5295#0" expanded="true" />
-            <element signature="e#5294#5295#0" expanded="true" />
-            <element signature="e#5323#5376#0" expanded="true" />
+            <element signature="e#601#933#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3440,8 +3429,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/transition/ripple/hiroki11x/rippletransitionanimation/SampleRevealEffectActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60876626">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/java/transition/ripple/hiroki11x/revealeffecttransition/RevealEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9259257">
+          <caret line="205" column="57" selection-start-line="205" selection-start-column="57" selection-end-line="205" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3868#3921#0" expanded="true" />
+            <element signature="e#3963#4016#0" expanded="true" />
+            <element signature="e#5137#5380#0" expanded="true" />
+            <element signature="e#5379#5380#0" expanded="true" />
+            <element signature="e#5408#5461#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/revealeffecttransition/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25466892">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
