@@ -8,7 +8,7 @@
 
     </style>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppTheme.Base">    <!-- AppTheme.Baseを継承 -->
+    <style name="RevealActivityTheme" parent="AppTheme.Base">    <!-- AppTheme.Baseを継承 -->
         <item name="android:windowContentTransitions">true</item>
         <item name="android:windowAllowEnterTransitionOverlap">true</item>
         <item name="android:windowAllowReturnTransitionOverlap">true</item>

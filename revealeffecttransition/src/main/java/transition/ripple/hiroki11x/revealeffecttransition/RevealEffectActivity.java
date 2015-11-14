@@ -1,12 +1,10 @@
-package transition.ripple.hiroki11x.rippletransitionanimation;
+package transition.ripple.hiroki11x.revealeffecttransition;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.ColorRes;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Transition;
@@ -19,36 +17,34 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 
-public class RippleEffectActivity extends AppCompatActivity {
+/**
+ * Created by hirokinaganuma on 15/11/14.
+ */
 
-    Button button;
-    RelativeLayout layout;
+public class RevealEffectActivity extends AppCompatActivity {
 
+    ViewGroup parentLayout;
     private Interpolator interpolator;
     private static final int DELAY = 100;
 
-    private ViewTreeObserver.OnGlobalLayoutListener mGlobalLayoutListener;
 
-    int x;
-    int y;
+    int reveal_center_x;
+    int reveal_center_y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ripple_effect);
-        button = (Button) findViewById(R.id.button);
-        layout = (RelativeLayout) findViewById(R.id.parentlayout);
+//        setContentView(R.layout.activity_ripple_effect);
+        parentLayout = (ViewGroup)getWindow().getDecorView().findViewById(android.R.id.content);;
         setupWindowAnimations();
-        layout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        parentLayout.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                removeOnGlobalLayoutListener(layout.getViewTreeObserver(), this);
-                x = (int) getIntent().getFloatExtra("x", 0.0f);
-                y = (int) getIntent().getFloatExtra("y", 0.0f);
-                animateRevealColorFromCoordinates(R.color.green, x, y, RippleEffectActivity.this);
+                removeOnGlobalLayoutListener(parentLayout.getViewTreeObserver(), this);
+                reveal_center_x = (int) getIntent().getFloatExtra("x", 0.0f);
+                reveal_center_y = (int) getIntent().getFloatExtra("y", 0.0f);
+                animateRevealColorFromCoordinates(reveal_center_x, reveal_center_y, RevealEffectActivity.this);
             }
         });
     }
@@ -77,24 +73,17 @@ public class RippleEffectActivity extends AppCompatActivity {
             @Override
             public void onTransitionStart(Transition transition) {
             }
-
             @Override
             public void onTransitionEnd(Transition transition) {
-                // Removing listener here is very important because shared element transition is executed again backwards on exit. If we don't remove the listener this code will be triggered again.
                 transition.removeListener(this);
-//                hideTarget();
-//                animateRevealShow(toolbar);
                 animateButtonsIn();
             }
-
             @Override
             public void onTransitionCancel(Transition transition) {
             }
-
             @Override
             public void onTransitionPause(Transition transition) {
             }
-
             @Override
             public void onTransitionResume(Transition transition) {
             }
@@ -111,21 +100,17 @@ public class RippleEffectActivity extends AppCompatActivity {
             public void onTransitionStart(Transition transition) {
                 transition.removeListener(this);
                 animateButtonsOut();
-                animateRevealHide(layout);
+                animateRevealHide(parentLayout);
             }
-
             @Override
             public void onTransitionEnd(Transition transition) {
             }
-
             @Override
             public void onTransitionCancel(Transition transition) {
             }
-
             @Override
             public void onTransitionPause(Transition transition) {
             }
-
             @Override
             public void onTransitionResume(Transition transition) {
             }
@@ -136,7 +121,6 @@ public class RippleEffectActivity extends AppCompatActivity {
         int cx = (viewRoot.getLeft() + viewRoot.getRight()) / 2;
         int cy = (viewRoot.getTop() + viewRoot.getBottom()) / 2;
         int initialRadius = viewRoot.getWidth();
-
         Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, cx, cy, initialRadius, 0);
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -162,8 +146,8 @@ public class RippleEffectActivity extends AppCompatActivity {
     }
 
     private void animateButtonsIn() {
-        for (int i = 0; i < layout.getChildCount(); i++) {
-            View child = layout.getChildAt(i);
+        for (int i = 0; i < parentLayout.getChildCount(); i++) {
+            View child = parentLayout.getChildAt(i);
             child.animate()
                     .setStartDelay(100 + i * DELAY)
                     .setInterpolator(interpolator)
@@ -174,8 +158,8 @@ public class RippleEffectActivity extends AppCompatActivity {
     }
 
     private void animateButtonsOut() {
-        for (int i = 0; i < layout.getChildCount(); i++) {
-            View child = layout.getChildAt(i);
+        for (int i = 0; i < parentLayout.getChildCount(); i++) {
+            View child = parentLayout.getChildAt(i);
             child.animate()
                     .setStartDelay(i)
                     .setInterpolator(interpolator)
@@ -185,12 +169,11 @@ public class RippleEffectActivity extends AppCompatActivity {
         }
     }
 
-    public Animator animateRevealColorFromCoordinates(@ColorRes int color, int x, int y, Context context) {
+    public Animator animateRevealColorFromCoordinates(int x, int y, Context context) {
         int duration = 500;
         ViewGroup viewRoot = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);
         float finalRadius = (float) Math.hypot(viewRoot.getWidth(), viewRoot.getHeight());
         Animator anim = ViewAnimationUtils.createCircularReveal(viewRoot, x, y, 0, finalRadius);
-        viewRoot.setBackgroundColor(ContextCompat.getColor(context, color));
         anim.setDuration(duration);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
         anim.start();
