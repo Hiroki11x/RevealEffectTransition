@@ -1,3 +1,5 @@
+[![DUB](https://img.shields.io/dub/l/vibe-d.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+
 # RevealEffectTransition
 AndroidのActivity遷移の際のアニメーションライブラリーです
 
