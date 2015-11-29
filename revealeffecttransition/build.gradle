@@ -1,4 +1,12 @@
+buildscript {
+    dependencies {
+        classpath rootProject.ext.androidPlugin
+        classpath rootProject.ext.bintrayRelease
+    }
+}
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 23
@@ -22,4 +30,14 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
+}
+
+publish {
+    userOrg = BINTRAY_USER
+    groupId = GROUP_ID
+    uploadName = 'RxAnimations'
+    artifactId = 'rxanimations'
+    publishVersion = VERSION_NAME
+    description = 'Android animation observable binding.'
+    website = rootProject.ext.siteUrl
 }
