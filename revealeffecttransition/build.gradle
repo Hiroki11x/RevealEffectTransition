@@ -37,7 +37,7 @@ publish {
     groupId = 'com.hiroki11x.revealeffecttransition'
     uploadName = 'revealeffecttransition'
     artifactId = 'revealeffecttransition'
-    publishVersion = '0.0.1'
-    description = 'Android animation observable binding.'
+    publishVersion = '0.0.2'
+    description = 'Android Reveal Animation in Transition.'
     website = rootProject.ext.siteUrl
 }
