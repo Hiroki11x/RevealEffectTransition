@@ -33,11 +33,11 @@ dependencies {
 }
 
 publish {
-    userOrg = BINTRAY_USER
-    groupId = GROUP_ID
+    userOrg = 'hiroki11x'
+    groupId = 'com.hiroki11x.revealeffecttransition'
     uploadName = 'RxAnimations'
     artifactId = 'rxanimations'
-    publishVersion = VERSION_NAME
+    publishVersion = '0.0.1'
     description = 'Android animation observable binding.'
     website = rootProject.ext.siteUrl
 }
